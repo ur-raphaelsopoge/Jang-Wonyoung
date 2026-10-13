@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#07051a">
+  <title>A Galaxy Made for You</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;1,9..144,400&family=Manrope:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <canvas id="sky" aria-hidden="true"></canvas>
+
+  <main class="intro" id="intro">
+    <section class="intro-card">
+      <h1 id="title"></h1>
+      <svg class="intro-art" viewBox="0 0 96 96" aria-hidden="true">
+        <defs>
+          <linearGradient id="moonFill" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#ffe2b8"/>
+            <stop offset="1" stop-color="#ff8fb1"/>
+          </linearGradient>
+        </defs>
+        <path d="M58 10a38 38 0 1 0 27 66A32 32 0 0 1 58 10z" fill="url(#moonFill)"/>
+        <path d="M76 18c1 7 4 10 11 11-7 1-10 4-11 11-1-7-4-10-11-11 7-1 10-4 11-11z" fill="#c6fbf3"/>
+        <circle cx="22" cy="24" r="2" fill="#ddd3ff"/>
+        <circle cx="86" cy="62" r="1.5" fill="#ddd3ff"/>
+      </svg>
+      <p class="intro-subtitle" id="subtitle"></p>
+      <button class="button-primary" id="enter" type="button"></button>
+    </section>
+  </main>
+
+  <audio id="music" loop preload="auto"></audio>
+  <button class="sound-toggle" id="soundToggle" type="button" aria-pressed="true" aria-label="Mute music" hidden>
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path class="icon-speaker" d="M4 9v6h4l5 4V5L8 9H4z"/>
+      <path class="icon-waves" d="M16 8.5a5 5 0 0 1 0 7M18.5 6a8.5 8.5 0 0 1 0 12" fill="none" stroke-linecap="round"/>
+      <path class="icon-muted" d="M16 9l5 6M21 9l-5 6" fill="none" stroke-linecap="round"/>
+    </svg>
+  </button>
+
+  <p class="hint" id="hint"></p>
+  <nav class="memory-nav" id="memoryNav" aria-label="Memories"></nav>
+
+  <aside class="memory" id="memory" hidden role="dialog" aria-modal="true" aria-labelledby="memoryTitle">
+    <article class="memory-card">
+      <div class="memory-art" id="memoryArt"></div>
+      <h2 id="memoryTitle"></h2>
+      <p id="memoryText"></p>
+      <button class="button-ghost" id="memoryClose" type="button">Back to the galaxy</button>
+    </article>
+  </aside>
+
+  <script src="app.js"></script>
+</body>
+</html>
